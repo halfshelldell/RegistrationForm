@@ -35,11 +35,11 @@ public class MainTest {
         Connection conn = startConnection();
         User user = new User(1, "Alice", "123 red lane", "aaa@gmail.com");
         Main.insertUser(conn, user);
-        Main.updateUser(conn, "Bob", "345 university blvd", "alice@gmail.com", 1);
+        User user2 = new User(1, "Bob", "345 university blvd", "alice@gmail.com");
+        Main.updateUser(conn, user2);
         ArrayList<User> userArrayList = Main.selectUsers(conn);
         conn.close();
         assertTrue(userArrayList.get(0).username.equals("Bob"));
-
     }
 
     @Test
