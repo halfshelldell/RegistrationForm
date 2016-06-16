@@ -95,7 +95,7 @@ public class Main {
         Spark.delete(
                 "/user/:id",
                 (request, response) -> {
-                    int id = Integer.valueOf(request.queryParams(":id"));
+                    int id = Integer.valueOf(request.params(":id"));
                     deleteUser(conn, id);
                     return "";
                 }
